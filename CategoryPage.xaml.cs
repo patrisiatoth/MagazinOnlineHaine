@@ -13,7 +13,27 @@ namespace MagazinOnlineHaine
             InitializeComponent();
             _database = new MagazinOnlineDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MagazinOnlineDatabase.db"));
 
+            InitializeDatabase();
             LoadCategories();
+        }
+
+        private void InitializeDatabase()
+        {
+
+            if (!_database.GetCategories().Any())
+            {
+                var sampleCategories = new List<Category>
+                {
+                    new Category { CategoryName = "Dresses" },
+                    new Category { CategoryName = "Pants" },
+                    new Category { CategoryName = "Skirts" }
+                };
+
+                foreach (var category in sampleCategories)
+                {
+                    _database.SaveCategory(category);
+                }
+            }
         }
 
         private void LoadCategories()

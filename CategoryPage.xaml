@@ -16,6 +16,5 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Text="Gestionează Categorii" Clicked="OnManageCategoriesClicked" />
     </StackLayout>
 </ContentPage>

@@ -12,7 +12,7 @@ namespace MagazinOnlineHaine
         public ProductPage(Category selectedCategory)
         {
             InitializeComponent();
-            _database = new MagazinOnlineDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mydatabase.db"));
+            _database = new MagazinOnlineDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MagazinOnlineDatabase.db"));
             _selectedCategory = selectedCategory;
 
             Title = _selectedCategory.CategoryName;
