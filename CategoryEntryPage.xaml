@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagazinOnlineHaine.CategoryEntryPage"
+             Title="Gestionează Categorii">
+
+    <StackLayout Padding="20" Spacing="10">
+
+        <CollectionView x:Name="CategoriesCollectionView"
+                        SelectionMode="Single"
+                        SelectionChanged="OnCategorySelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding CategoryName}" FontSize="Medium" />
+                        <Button Text="Șterge" Clicked="OnDeleteCategoryClicked" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Entry x:Name="CategoryNameEntry" Placeholder="Introdu numele categoriei" />
+        <Button Text="Adaugă/Modifică Categorie" Clicked="OnSaveCategoryClicked" />
+    </StackLayout>
+</ContentPage>

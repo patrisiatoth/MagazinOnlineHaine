@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagazinOnlineHaine.ProductEntryPage"
+             Title="Adaugă Produs">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+            <Label Text="Nume Produs:" />
+            <Entry x:Name="NameEntry" Placeholder="Introdu numele produsului" />
+
+            <Label Text="Preț:" />
+            <Entry x:Name="PriceEntry" Placeholder="Introdu prețul" Keyboard="Numeric" />
+
+            <Label Text="URL Imagine:" />
+            <Entry x:Name="ImageUrlEntry" Placeholder="Introdu URL-ul imaginii" />
+
+            <Label Text="Categorie:" />
+            <Picker x:Name="CategoryPicker" Title="Selectează o categorie">
+            </Picker>
+
+            <Button Text="Salvează Produs" Clicked="OnSaveButtonClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
