@@ -31,5 +31,6 @@ namespace MagazinOnlineHaine
 
             CategoriesCollectionView.SelectedItem = null;
         }
+
     }
 }

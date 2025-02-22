@@ -7,19 +7,29 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MagazinOnlineHaine">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
     <ShellContent 
-        Title="Available Clothing Items" 
+        Title="Categories" 
         ContentTemplate="{DataTemplate local:CategoryPage}" 
          />
+    
+    <ShellContent 
+    Title="All Clothing Items" 
+    ContentTemplate="{DataTemplate local:ProductPage}" 
+    />
 
     <ShellContent 
-            Title="Clothing Items" 
-            ContentTemplate="{DataTemplate local:ProductEntryPage}" 
-             />
+    Title="Manage Clothing Items" 
+    ContentTemplate="{DataTemplate local:ProductEntryPage}" 
+    />
 
+    <ShellContent 
+    Title="Manage Categories" 
+    ContentTemplate="{DataTemplate local:CategoryEntryPage}" 
+    />
+
+    <ShellContent 
+    Title="Manage Sizes" 
+    ContentTemplate="{DataTemplate local:SizeEntryPage}" 
+    />
+    
 </Shell>

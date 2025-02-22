@@ -4,15 +4,18 @@
              x:Class="MagazinOnlineHaine.CategoryPage"
              Title="Categorii">
 
-    <CollectionView x:Name="CategoriesCollectionView"
-                    SelectionMode="Single"
-                    SelectionChanged="OnCategorySelected">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <StackLayout Padding="10">
-                    <Label Text="{Binding CategoryName}" FontSize="Medium" />
-                </StackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <StackLayout>
+        <CollectionView x:Name="CategoriesCollectionView"
+                        SelectionMode="Single"
+                        SelectionChanged="OnCategorySelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding CategoryName}" FontSize="Medium" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Gestionează Categorii" Clicked="OnManageCategoriesClicked" />
+    </StackLayout>
 </ContentPage>

@@ -13,7 +13,7 @@ namespace MagazinOnlineHaine
         public SizeEntryPage()
         {
             InitializeComponent();
-            _database = new MagazinOnlineDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mydatabase.db"));
+            _database = new MagazinOnlineDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MagazinOnlineDatabase.db"));
             LoadSizes();
         }
 
@@ -28,7 +28,6 @@ namespace MagazinOnlineHaine
             _selectedSize = e.CurrentSelection.FirstOrDefault() as Size;
             if (_selectedSize != null)
             {
-                // Afișează numele mărimii selectate în Entry
                 SizeNameEntry.Text = _selectedSize.SizeName;
             }
         }
