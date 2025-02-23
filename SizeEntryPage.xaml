@@ -4,21 +4,24 @@
              x:Class="MagazinOnlineHaine.SizeEntryPage"
              Title="Gestionează Mărimi">
 
-    <StackLayout Padding="20" Spacing="10">
-        <CollectionView x:Name="SizesCollectionView"
-                        SelectionMode="Single"
-                        SelectionChanged="OnSizeSelected">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10">
-                        <Label Text="{Binding SizeName}" FontSize="Small" HorizontalOptions="Center"/>
-                        <Button Text="Șterge" Clicked="OnDeleteSizeClicked" CommandParameter="{Binding .}" HorizontalOptions="Center" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+            <CollectionView x:Name="SizesCollectionView"
+                            SelectionMode="Single"
+                            SelectionChanged="OnSizeSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding SizeName}" FontSize="Small" HorizontalOptions="Center"/>
+                            <Button Text="Șterge" Clicked="OnDeleteSizeClicked" CommandParameter="{Binding .}" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-        <Entry x:Name="SizeNameEntry" Placeholder="Introdu numele mărimii" />
-        <Button Text="Adaugă/Modifică Mărime" Clicked="OnSaveSizeClicked" />
-    </StackLayout>
+            <Entry x:Name="SizeNameEntry" Placeholder="Introdu numele mărimii" />
+            <Button Text="Adaugă/Modifică Mărime" Clicked="OnSaveSizeClicked" />
+        </StackLayout>
+    </ScrollView>
+
 </ContentPage>
