@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MagazinOnlineHaine"
              x:Class="MagazinOnlineHaine.ProductEntryPage"
              Title="Gestionare Produse">
 
@@ -10,7 +11,11 @@
             <Entry x:Name="NameEntry" Placeholder="Introdu numele produsului" />
 
             <Label Text="Preț:" />
-            <Entry x:Name="PriceEntry" Placeholder="Introdu prețul" Keyboard="Numeric" />
+            <Entry x:Name="PriceEntry" Placeholder="Introdu prețul" Keyboard="Numeric">
+                <Entry.Behaviors>
+                    <local:ValidationBehavior />
+                </Entry.Behaviors>
+            </Entry>
 
             <Label Text="URL Imagine:" />
             <Entry x:Name="ImageUrlEntry" Placeholder="Introdu URL-ul imaginii" />
