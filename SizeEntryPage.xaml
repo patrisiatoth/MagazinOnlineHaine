@@ -11,8 +11,8 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Label Text="{Binding SizeName}" FontSize="Medium" />
-                        <Button Text="Șterge" Clicked="OnDeleteSizeClicked" />
+                        <Label Text="{Binding SizeName}" FontSize="Small" />
+                        <Button Text="Șterge" Clicked="OnDeleteSizeClicked" CommandParameter="{Binding .}" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

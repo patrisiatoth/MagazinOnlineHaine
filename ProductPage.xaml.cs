@@ -7,24 +7,17 @@ namespace MagazinOnlineHaine
     public partial class ProductPage : ContentPage
     {
         private readonly MagazinOnlineDatabase _database;
-        private readonly Category _selectedCategory;
 
-        public ProductPage(Category selectedCategory)
+        public ProductPage()
         {
             InitializeComponent();
             _database = new MagazinOnlineDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MagazinOnlineDatabase.db"));
-            _selectedCategory = selectedCategory;
-
-            Title = _selectedCategory.CategoryName;
-
             LoadProducts();
         }
 
         private void LoadProducts()
         {
-            List<Product> products = _database.GetProducts()
-                .Where(p => p.CategoryId == _selectedCategory.Id)
-                .ToList();
+            var products = _database.GetProductsWithChildren();
             ProductsCollectionView.ItemsSource = products;
         }
     }

@@ -58,12 +58,12 @@ namespace MagazinOnlineHaine
 
         private async void OnDeleteSizeClicked(object sender, System.EventArgs e)
         {
-            if (_selectedSize != null)
+            if (sender is Button button && button.CommandParameter is Size sizeToDelete)
             {
                 bool confirm = await DisplayAlert("Confirmă", "Sigur vrei să ștergi această mărime?", "Da", "Nu");
                 if (confirm)
                 {
-                    _database.DeleteSize(_selectedSize);
+                    _database.DeleteSize(sizeToDelete);
                     LoadSizes();
                 }
             }

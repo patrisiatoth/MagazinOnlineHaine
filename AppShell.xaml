@@ -4,32 +4,40 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MagazinOnlineHaine"
-    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutBehavior="Disabled"
     Title="MagazinOnlineHaine">
 
-    <ShellContent 
-        Title="Categories" 
-        ContentTemplate="{DataTemplate local:CategoryPage}" 
-         />
-    
-    <ShellContent 
-    Title="All Clothing Items" 
-    ContentTemplate="{DataTemplate local:ProductPage}" 
-    />
+    <TabBar>
 
-    <ShellContent 
-    Title="Manage Clothing Items" 
-    ContentTemplate="{DataTemplate local:ProductEntryPage}" 
-    />
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent Route="FrontPage"
+                          ContentTemplate="{DataTemplate local:FrontPage}"
+                          Title="Bun venit" />
+        </Tab>
 
-    <ShellContent 
-    Title="Manage Categories" 
-    ContentTemplate="{DataTemplate local:CategoryEntryPage}" 
-    />
+        <Tab Title="Categories" Icon="category.png">
+            <ShellContent Route="CategoryPage"
+                          ContentTemplate="{DataTemplate local:CategoryPage}"
+                          Title="Categorii" />
+        </Tab>
 
-    <ShellContent 
-    Title="Manage Sizes" 
-    ContentTemplate="{DataTemplate local:SizeEntryPage}" 
-    />
+        <Tab Title="Items" Icon="shirt.png">
+            <ShellContent Route="ProductPage"
+                          ContentTemplate="{DataTemplate local:ProductPage}"
+                          Title="Produse" />
+        </Tab>
+
+        <Tab Title="Manage" Icon="settings.png">
+            <ShellContent Route="CategoryEntryPage"
+                          ContentTemplate="{DataTemplate local:CategoryEntryPage}"
+                          Title="Manage categories" />
+            <ShellContent Route="ProductEntryPage"
+                          ContentTemplate="{DataTemplate local:ProductEntryPage}"
+                          Title="Manage products" />
+            <ShellContent Route="SizeEntryPage"
+                          ContentTemplate="{DataTemplate local:SizeEntryPage}"
+                          Title="Manage sizes" />
+        </Tab>
+    </TabBar>
     
 </Shell>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagazinOnlineHaine.FrontPage"
+             Title="Bun venit">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Bun venit la Magazinul Online de Haine!"
+                   FontSize="Large"
+                   HorizontalOptions="Center" />
+            
+            <Image Source="clothing.jpg"
+                   Aspect="AspectFill"
+                   HeightRequest="200" />
+
+            <Label Text="Descoperă cele mai noi tendințe în modă și găsește hainele potrivite pentru tine!"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <Button Text="Vezi Categorii"
+                    Clicked="OnSeeCategoriesClicked"
+                    HorizontalOptions="Center" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

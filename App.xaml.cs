@@ -19,15 +19,15 @@ namespace MagazinOnlineHaine
                 return database;
             }
         }
+
         public App()
         {
             InitializeComponent();
         }
 
-        protected override Window CreateWindow(IActivationState? activationState)
+        protected override Window CreateWindow(IActivationState activationState)
         {
-            var window = new Window(new NavigationPage(new CategoryPage()));
-            return window;
+            return new Window(new AppShell());
         }
     }
 }
