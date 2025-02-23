@@ -6,7 +6,6 @@
 
     <ScrollView>
         <StackLayout Padding="20" Spacing="10">
-            <!-- Câmpuri pentru adăugare/editare -->
             <Label Text="Nume Produs:" />
             <Entry x:Name="NameEntry" Placeholder="Introdu numele produsului" />
 
@@ -19,11 +18,11 @@
             <Label Text="Categorie:" />
             <Picker x:Name="CategoryPicker" Title="Selectează o categorie" />
 
-            <!-- Butoane pentru salvare și ștergere -->
-            <Button Text="Salvează Produs" Clicked="OnSaveButtonClicked" />
-            <Button Text="Șterge Produs" Clicked="OnDeleteButtonClicked" />
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                <Button Text="Salvează Produs" Clicked="OnSaveButtonClicked" />
+                <Button Text="Șterge Produs" Clicked="OnDeleteButtonClicked" />
+            </StackLayout>
 
-            <!-- Lista de produse existente -->
             <CollectionView x:Name="ProductsCollectionView"
                             SelectionMode="Single"
                             SelectionChanged="OnProductSelected">
@@ -33,7 +32,8 @@
                             <Label Text="{Binding Name}" FontSize="Medium" />
                             <Label Text="{Binding Price, StringFormat='Preț: {0:C}'}" FontSize="Small" />
                             <Label Text="{Binding Category.CategoryName, StringFormat='Categorie: {0}'}" FontSize="Small" />
-                            <Image Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="100" />
+
+                            <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="100" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

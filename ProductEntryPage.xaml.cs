@@ -8,7 +8,7 @@ namespace MagazinOnlineHaine
     public partial class ProductEntryPage : ContentPage
     {
         private readonly MagazinOnlineDatabase _database;
-        private Product _selectedProduct;
+        private Product? _selectedProduct;
 
         public ProductEntryPage()
         {
@@ -59,7 +59,6 @@ namespace MagazinOnlineHaine
 
             if (_selectedProduct == null)
             {
-                // Adaugă un nou produs
                 var product = new Product
                 {
                     Name = NameEntry.Text,

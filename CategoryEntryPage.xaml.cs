@@ -7,7 +7,7 @@ namespace MagazinOnlineHaine
     public partial class CategoryEntryPage : ContentPage
     {
         private readonly MagazinOnlineDatabase _database;
-        private Category _selectedCategory;
+        private Category? _selectedCategory;
 
         public CategoryEntryPage()
         {

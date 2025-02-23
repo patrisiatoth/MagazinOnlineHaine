@@ -12,7 +12,7 @@ namespace MagazinOnlineHaine.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string SizeName { get; set; }
+        public string SizeName { get; set; } = string.Empty;
         [ManyToMany(typeof(ProductSize), CascadeOperations = CascadeOperation.All)]
         public List<Product> Products { get; set; } = new List<Product>();
     }

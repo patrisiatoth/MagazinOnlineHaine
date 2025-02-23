@@ -15,16 +15,10 @@
                           Title="Bun venit" />
         </Tab>
 
-        <Tab Title="Categories" Icon="category.png">
+        <Tab Title="Categories" Icon="shirt.png">
             <ShellContent Route="CategoryPage"
                           ContentTemplate="{DataTemplate local:CategoryPage}"
                           Title="Categorii" />
-        </Tab>
-
-        <Tab Title="Items" Icon="shirt.png">
-            <ShellContent Route="ProductPage"
-                          ContentTemplate="{DataTemplate local:ProductPage}"
-                          Title="Produse" />
         </Tab>
 
         <Tab Title="Manage" Icon="settings.png">
