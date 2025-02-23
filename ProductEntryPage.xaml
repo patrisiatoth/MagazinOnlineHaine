@@ -6,43 +6,56 @@
              Title="Gestionare Produse">
 
     <ScrollView>
-        <StackLayout Padding="20" Spacing="10">
-            <Label Text="Nume Produs:" />
-            <Entry x:Name="NameEntry" Placeholder="Introdu numele produsului" />
+        <Grid Padding="20" RowSpacing="10" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-            <Label Text="Preț:" />
-            <Entry x:Name="PriceEntry" Placeholder="Introdu prețul" Keyboard="Numeric">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Text="Nume Produs:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+            <Entry x:Name="NameEntry" Placeholder="Introdu numele produsului" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Preț:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+            <Entry x:Name="PriceEntry" Placeholder="Introdu prețul" Keyboard="Numeric" Grid.Row="1" Grid.Column="1">
                 <Entry.Behaviors>
                     <local:ValidationBehavior />
                 </Entry.Behaviors>
             </Entry>
 
-            <Label Text="URL Imagine:" />
-            <Entry x:Name="ImageUrlEntry" Placeholder="Introdu URL-ul imaginii" />
+            <Label Text="URL Imagine:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+            <Entry x:Name="ImageUrlEntry" Placeholder="Introdu URL-ul imaginii" Grid.Row="2" Grid.Column="1" />
 
-            <Label Text="Categorie:" />
-            <Picker x:Name="CategoryPicker" Title="Selectează o categorie" />
+            <Label Text="Categorie:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
+            <Picker x:Name="CategoryPicker" Title="Selectează o categorie" Grid.Row="3" Grid.Column="1" />
 
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
-                <Button Text="Salvează Produs" Clicked="OnSaveButtonClicked" />
-                <Button Text="Șterge Produs" Clicked="OnDeleteButtonClicked" />
-            </StackLayout>
+            <Button Text="Salvează Produs" Clicked="OnSaveButtonClicked" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" />
+            <Button Text="Șterge Produs" Clicked="OnDeleteButtonClicked" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" />
 
             <CollectionView x:Name="ProductsCollectionView"
                             SelectionMode="Single"
-                            SelectionChanged="OnProductSelected">
+                            SelectionChanged="OnProductSelected"
+                            Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10">
                             <Label Text="{Binding Name}" FontSize="Medium" />
                             <Label Text="{Binding Price, StringFormat='Preț: {0:C}'}" FontSize="Small" />
                             <Label Text="{Binding Category.CategoryName, StringFormat='Categorie: {0}'}" FontSize="Small" />
-
-                            <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="100" />
+                            <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="300" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </StackLayout>
+        </Grid>
     </ScrollView>
 </ContentPage>

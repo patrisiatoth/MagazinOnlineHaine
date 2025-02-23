@@ -67,6 +67,7 @@ namespace MagazinOnlineHaine
                     CategoryId = (CategoryPicker.SelectedItem as Category)?.Id
                 };
                 _database.SaveProduct(product);
+
             }
             else
             {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.LocalNotification;
 
 namespace MagazinOnlineHaine
 {
@@ -13,7 +14,9 @@ namespace MagazinOnlineHaine
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                })
+                .UseLocalNotification();
+            ;
 
 #if DEBUG
     		builder.Logging.AddDebug();

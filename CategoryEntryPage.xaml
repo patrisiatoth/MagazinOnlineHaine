@@ -12,14 +12,14 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Label Text="{Binding CategoryName}" FontSize="Medium" />
-                        <Button Text="Șterge" Clicked="OnDeleteCategoryClicked" />
+                        <Label Text="{Binding CategoryName}" FontSize="Medium" HorizontalOptions="Center" />
+                        <Button Text="Șterge" Clicked="OnDeleteCategoryClicked" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
         <Entry x:Name="CategoryNameEntry" Placeholder="Introdu numele categoriei" />
-        <Button Text="Adaugă/Modifică Categorie" Clicked="OnSaveCategoryClicked" />
+        <Button Text="Adaugă/Modifică Categorie" Clicked="OnSaveCategoryClicked" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" />
     </StackLayout>
 </ContentPage>
